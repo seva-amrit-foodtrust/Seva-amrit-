@@ -3,175 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seva Amrit Food Trust | Feed the Hungry</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Seva Amrit Food Trust - Serving Hope, Spreading Smiles</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+        #intro-slide {
+            transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-orange-500 selection:text-white">
+
+    <!-- Introductory Welcome Slide / Overlay -->
+    <div id="intro-slide" class="fixed inset-0 z-50 bg-gradient-to-br from-orange-600 via-orange-700 to-amber-800 flex flex-col items-center justify-center text-white px-4">
+        <div class="text-center animate-fade-in max-w-2xl">
+            <div class="inline-block p-5 bg-white/10 rounded-full backdrop-blur-md mb-6 shadow-2xl border border-white/20">
+                <i class="fa-solid fa-hands-holding-child text-6xl text-amber-200"></i>
+            </div>
+            <span class="bg-white/20 text-orange-100 text-xs font-bold uppercase px-4 py-1.5 rounded-full tracking-widest inline-block mb-4">
+                Non-Profit Welfare Trust
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-4 drop-shadow-md">
+                Welcome to Seva Amrit
+            </h1>
+            <p class="text-lg md:text-xl text-orange-100 font-medium mb-8 max-w-lg mx-auto leading-relaxed">
+                No one should sleep hungry. Join hands with us to serve hope, dignity, and nutritious meals to the underprivileged.
+            </p>
+            <button onclick="enterWebsite()" class="bg-white text-orange-600 font-extrabold px-8 py-4 rounded-full shadow-2xl hover:bg-orange-50 transition transform hover:scale-105 cursor-pointer text-lg flex items-center gap-3 mx-auto">
+                <span>Enter Website</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Website Content -->
+    <div id="main-content" class="opacity-0 transition-opacity duration-1000">
+        
+        <!-- Header / Navbar -->
+        <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-orange-100 shadow-xs">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-orange-600 text-white flex items-center justify-center font-bold text-xl shadow-md">
+                        SA
+                    </div>
+                    <div>
+                        <span class="text-xl font-black tracking-tight text-orange-600 block leading-tight">Seva Amrit</span>
+                        <span class="text-xs text-slate-500 font-medium tracking-wider uppercase">Food Trust</span>
+                    </div>
+                </div>
+                <nav class="hidden md:flex items-center gap-8 font-semibold text-slate-600 text-sm">
+                    <a href="#about" class="hover:text-orange-600 transition">About Us</a>
+                    <a href="#programs" class="hover:text-orange-600 transition">Our Programs</a>
+                    <a href="#impact" class="hover:text-orange-600 transition">Our Impact</a>
+                    <a href="#donate" class="hover:text-orange-600 transition">Donate</a>
+                </nav>
+                <a href="#donate" class="bg-orange-600 hover:bg-orange-700 text-white font-bold px-5 py-2.5 rounded-full shadow-md transition transform hover:scale-105 text-sm">
+                    Support Cause
+                </a>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-b from-orange-50 via-white to-white py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="bg-orange-100 text-orange-700 text-xs font-bold uppercase px-3.5 py-1.5 rounded-full tracking-wider inline-block mb-4 shadow-xs">
+                    <i class="fa-solid fa-seedling mr-1.5 text-orange-600"></i> Zero Hunger Initiative
+                </span>
+                <h1 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-6 leading-tight">
+                    Feeding Bellies, <span class="text-orange-600 underline decoration-orange-300 decoration-wavy">Nourishing Souls</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed font-normal">
+                    We bridge the gap between surplus food and empty stomachs, ensuring vulnerable communities get regular, hygienic, and warm meals.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#donate" class="bg-orange-600 hover:bg-orange-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="fa-solid fa-heart"></i> Make a Donation
+                    </a>
+                    <a href="#programs" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-bold px-8 py-4 rounded-xl transition shadow-xs">
+                        View Programs
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Counter Section -->
+        <section id="impact" class="bg-orange-600 text-white py-16 px-4 sm:px-6 lg:px-8 my-8 shadow-xl">
+            <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4 bg-orange-700/50 rounded-2xl border border-orange-500/30">
+                    <div class="text-4xl md:text-5xl font-black mb-2 text-amber-200">50,000+</div>
+                    <div class="text-orange-100 text-sm font-semibold uppercase tracking-wider">Meals Served</div>
+                </div>
+                <div class="p-4 bg-orange-700/50 rounded-2xl border border-orange-500/30">
+                    <div class="text-4xl md:text-5xl font-black mb-2 text-amber-200">15+</div>
+                    <div class="text-orange-100 text-sm font-semibold uppercase tracking-wider">Cities Covered</div>
+                </div>
+                <div class="p-4 bg-orange-700/50 rounded-2xl border border-orange-500/30">
+                    <div class="text-4xl md:text-5xl font-black mb-2 text-amber-200">500+</div>
+                    <div class="text-orange-100 text-sm font-semibold uppercase tracking-wider">Active Volunteers</div>
+                </div>
+                <div class="p-4 bg-orange-700/50 rounded-2xl border border-orange-500/30">
+                    <div class="text-4xl md:text-5xl font-black mb-2 text-amber-200">100%</div>
+                    <div class="text-orange-100 text-sm font-semibold uppercase tracking-wider">Transparency</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Programs Section -->
+        <section id="programs" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-orange-600 font-bold text-xs uppercase tracking-widest bg-orange-50 px-3 py-1 rounded-full border border-orange-200">What We Do</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-3 mb-4">Our Core Relief Programs</h2>
+                <p class="text-slate-600 text-base">Designed to reach every corner where hunger meets helplessness, ensuring proper nutrition and respect.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-md border border-slate-100 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-orange-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-bowl-food"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Daily Meal Distribution</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Fresh, clean, and nutritious cooked meals packed and distributed daily to daily-wage workers and slum areas.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-md border border-slate-100 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-amber-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Ration Kit Support</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Monthly grocery and dry ration kits provided to extremely poor families, widows, and elderly citizens living alone.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-md border border-slate-100 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-rose-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-hands-holding-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Emergency Food Drives</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Rapid response food support teams deployed during natural calamities, cold waves, or extreme emergencies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Trust Section -->
+        <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-orange-50/50 rounded-3xl my-8 border border-orange-100">
+            <div class="grid md:grid-cols-2 gap-12 items-center px-4 md:px-8">
+                <div>
+                    <span class="text-orange-600 font-bold text-xs uppercase tracking-widest bg-white px-3 py-1 rounded-full border border-orange-200 shadow-xs">About Trust</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-3 mb-4">Dedicated to Serving Humanity</h2>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Seva Amrit Food Trust operates on the belief that sharing food is the highest form of service. With total transparency, absolute dedication, and a strong community of volunteers, every single rupee donated goes directly toward feeding the hungry.
+                    </p>
+                    <ul class="space-y-3 font-semibold text-slate-700 text-sm">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-orange-600"></i> Verified and Hygienic Preparation Standards</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-orange-600"></i> 100% Fund Utilization Guarantee</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-orange-600"></i> Direct Ground-level Impact Delivery</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-xl border border-orange-100 text-center relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 text-orange-50 text-9xl font-black -z-0">SA</div>
+                    <div class="relative z-10">
+                        <i class="fa-solid fa-quote-left text-4xl text-orange-500 mb-4"></i>
+                        <p class="text-slate-700 italic font-medium mb-6 text-lg">"Service to humanity is service to God. Together we can ensure no child goes to bed with an empty stomach."</p>
+                        <h4 class="font-bold text-slate-900 text-base">Founder Team</h4>
+                        <span class="text-xs text-orange-600 font-bold uppercase tracking-wider">Seva Amrit Food Trust</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donation & UPI Section -->
+        <section id="donate" class="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            <div class="bg-white rounded-3xl shadow-2xl border border-slate-100 p-8 md:p-12 text-center">
+                <span class="bg-orange-100 text-orange-700 text-xs font-bold uppercase px-3 py-1 rounded-full tracking-wider inline-block mb-4">
+                    Secure Contributions
+                </span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Sponsor a Meal Today</h2>
+                <p class="text-slate-600 max-w-xl mx-auto mb-8 text-sm md:text-base">
+                    Your contribution brings warmth, hope, and a wholesome meal to someone in need. Scan the QR code or click the button below to donate securely.
+                </p>
+
+                <!-- UPI / QR Box -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 max-w-sm mx-auto mb-8 shadow-inner">
+                    <div class="bg-white p-4 rounded-xl shadow-sm inline-block mb-4 border border-slate-100">
+                        <div class="w-48 h-48 bg-slate-900 flex flex-col items-center justify-center text-white rounded-lg p-4 text-center">
+                            <i class="fa-solid fa-qrcode text-6xl text-orange-400 mb-3"></i>
+                            <span class="text-xs text-slate-300 font-medium">Scan & Pay via any UPI App (GPay, PhonePe, Paytm)</span>
+                        </div>
+                    </div>
+                    <div class="text-sm font-bold text-slate-700">UPI ID: <span class="text-orange-600 font-extrabold select-all bg-orange-50 px-2.5 py-1 rounded border border-orange-200">sevaamrit@upi</span></div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="upi://pay?pa=sevaamrit@upi&pn=Seva%20Amrit%20Food%20Trust" class="bg-orange-600 hover:bg-orange-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition transform hover:scale-105 flex items-center gap-2">
+                        <i class="fa-solid fa-mobile-screen-button"></i> Pay via UPI App
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-slate-900 text-slate-400 py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800 text-center md:text-left">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-1">Seva Amrit Food Trust</h3>
+                    <p class="text-sm text-slate-400">Serving humanity with devotion, transparency, and care.</p>
+                </div>
+                <div class="text-sm text-slate-500">
+                    &copy; 2026 Seva Amrit Food Trust. All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Script to handle intro slide transition -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        warmOrange: '#E06D27',
-                        vibrantBlue: '#3F8EAD',
-                        darkCharcoal: '#1A1A1A'
-                    }
-                }
-            }
+        function enterWebsite() {
+            const intro = document.getElementById('intro-slide');
+            const main = document.getElementById('main-content');
+            
+            intro.style.opacity = '0';
+            intro.style.visibility = 'hidden';
+            
+            main.classList.remove('opacity-0');
+            main.classList.add('animate-fade-in');
+            
+            window.scrollTo(0, 0);
         }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="bg-darkCharcoal text-gray-100 font-sans antialiased">
-
-    <header class="sticky top-0 z-50 bg-darkCharcoal/90 backdrop-blur-md border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center">
-                <img src="seva-amrit-logo.jpg" alt="Seva Amrit Logo" class="w-12 h-12 rounded-full object-cover">
-            </div>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                <a href="#about" class="hover:text-warmOrange transition">About Us</a>
-                <a href="#impact" class="hover:text-warmOrange transition">Our Impact</a>
-                <a href="#donate" class="hover:text-warmOrange transition">Donate</a>
-                <a href="#volunteer" class="hover:text-warmOrange transition">Volunteer</a>
-                <a href="#contact" class="hover:text-warmOrange transition">Contact</a>
-            </nav>
-            <div>
-                <a href="#donate" class="bg-warmOrange hover:bg-orange-600 text-white px-5 py-2.5 rounded-full font-semibold shadow-lg transition">
-                    Donate Now
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <section class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-darkCharcoal to-gray-900 border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <span class="inline-block bg-warmOrange/20 text-warmOrange text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider">
-                Together We Fight Hunger
-            </span>
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-6">
-                Nourishing Lives, <span class="text-warmOrange">Spreading Hope</span>
-            </h1>
-            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-gray-300 mb-10">
-                Join Seva Amrit Food Trust in our mission to provide wholesome meals and dignified support to underprivileged communities every single day.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="#donate" class="w-full sm:w-auto bg-warmOrange hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-xl shadow-xl transition transform hover:-translate-y-0.5">
-                    <i class="fas fa-heart mr-2"></i> Donate for Meals
-                </a>
-                <a href="#volunteer" class="w-full sm:w-auto bg-vibrantBlue hover:bg-sky-600 text-white font-bold px-8 py-4 rounded-xl shadow-xl transition transform hover:-translate-y-0.5">
-                    <i class="fas fa-hands-helping mr-2"></i> Become a Volunteer
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="impact" class="py-16 bg-gray-900/50 border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="p-6 bg-darkCharcoal rounded-2xl border border-gray-800 shadow-lg">
-                    <div class="text-4xl lg:text-5xl font-black text-warmOrange mb-2">50,000+</div>
-                    <div class="text-gray-400 font-medium">Meals Distributed</div>
-                </div>
-                <div class="p-6 bg-darkCharcoal rounded-2xl border border-gray-800 shadow-lg">
-                    <div class="text-4xl lg:text-5xl font-black text-vibrantBlue mb-2">15,000+</div>
-                    <div class="text-gray-400 font-medium">Lives Impacted</div>
-                </div>
-                <div class="p-6 bg-darkCharcoal rounded-2xl border border-gray-800 shadow-lg">
-                    <div class="text-4xl lg:text-5xl font-black text-warmOrange mb-2">25+</div>
-                    <div class="text-gray-400 font-medium">Communities Served</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Our Mission & Commitment to Transparency</h2>
-                <p class="text-gray-300 mb-6 leading-relaxed">
-                    At <strong>Seva Amrit Food Trust</strong>, we believe that access to nutritious food is a fundamental human right. Our dedicated team works day and night to bridge the gap between surplus food and those who struggle to secure even a single daily meal.
-                </p>
-                <p class="text-gray-300 mb-8 leading-relaxed">
-                    Every rupee you donate goes directly towards food preparation, distribution drives, and community welfare programs with absolute accountability.
-                </p>
-                <div class="flex items-center space-x-4 text-warmOrange font-semibold">
-                    <i class="fas fa-check-circle text-xl"></i> 100% Transparent Utilization
-                </div>
-            </div>
-            <div class="bg-gray-900 p-8 rounded-3xl border border-gray-800 shadow-2xl">
-                <h3 class="text-xl font-bold text-white mb-4">Quick Contact Info</h3>
-                <div class="space-y-4 text-gray-300">
-                    <p><i class="fas fa-phone-alt text-warmOrange mr-3"></i> +91 73909 26933</p>
-                    <p><i class="fas fa-envelope text-vibrantBlue mr-3"></i> sevaamrit3@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt text-warmOrange mr-3"></i> India</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="donate" class="py-20 bg-gradient-to-t from-darkCharcoal to-gray-900 border-t border-b border-gray-800">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Support Our Cause</h2>
-            <p class="text-gray-300 mb-8">Choose an amount or scan the official Google Pay QR code below to contribute.</p>
-
-            <!-- Quick Amount Selection Buttons -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-lg mx-auto mb-10">
-                <button onclick="alert('Thank you! Please scan the QR code below to complete your ₹100 contribution.')" class="bg-gray-800 hover:bg-warmOrange border border-gray-700 text-white font-bold py-3 px-4 rounded-xl transition shadow">
-                    ₹100
-                </button>
-                <button onclick="alert('Thank you! Please scan the QR code below to complete your ₹200 contribution.')" class="bg-gray-800 hover:bg-warmOrange border border-gray-700 text-white font-bold py-3 px-4 rounded-xl transition shadow">
-                    ₹200
-                </button>
-                <button onclick="alert('Thank you! Please scan the QR code below to complete your ₹500 contribution.')" class="bg-gray-800 hover:bg-warmOrange border border-gray-700 text-white font-bold py-3 px-4 rounded-xl transition shadow">
-                    ₹500
-                </button>
-                <button onclick="alert('Thank you! Please scan the QR code below to complete your ₹1000 contribution.')" class="bg-gray-800 hover:bg-warmOrange border border-gray-700 text-white font-bold py-3 px-4 rounded-xl transition shadow">
-                    ₹1000
-                </button>
-            </div>
-
-            <div class="bg-darkCharcoal p-8 sm:p-12 rounded-3xl border border-gray-800 shadow-2xl max-w-xl mx-auto">
-                <div class="bg-white p-4 rounded-2xl inline-block mb-6 shadow-inner">
-                    <img src="qr-code.jpg" alt="Google Pay QR Code" class="w-48 h-48 mx-auto object-contain">
-                </div>
-                <h3 class="text-lg font-semibold text-white mb-2">Scan & Pay via any UPI App</h3>
-                <p class="text-sm text-gray-400 mb-6">Google Pay / PhonePe / Paytm Supported</p>
-
-                <div class="bg-gray-900 p-4 rounded-xl text-left border border-gray-800 mb-6">
-                    <h4 class="text-xs font-bold uppercase tracking-wider text-warmOrange mb-2">How to donate:</h4>
-                    <ol class="text-sm text-gray-300 space-y-1 list-decimal list-inside">
-                        <li>Select your amount above or use your UPI app.</li>
-                        <li>Scan the QR code shown above.</li>
-                        <li>Complete the payment safely.</li>
-                    </ol>
-                </div>
-
-                <div class="text-gray-400 text-sm">
-                    Need help or want to confirm a donation? Call us at <strong class="text-white">+91 73909 26933</strong>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact" class="bg-darkCharcoal border-t border-gray-800 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-            <div>
-                <img src="seva-amrit-logo.jpg" alt="Seva Amrit Food Trust Logo"
-                     class="h-16 w-auto rounded-lg object-contain bg-white mb-3">
-                <p class="text-sm text-gray-400">Dedicated to fighting hunger and uplifting communities.</p>
-            </div>
-            <div class="space-y-2 text-sm text-gray-300">
-                <p><i class="fas fa-phone-alt text-warmOrange mr-2"></i> +91 73909 26933</p>
-                <p><i class="fas fa-envelope text-vibrantBlue mr-2"></i> sevaamrit3@gmail.com</p>
-            </div>
-            <div class="flex space-x-6 text-xl">
-                <a href="https://www.facebook.com/share/1KC1LLmNVw/" target="_blank" class="text-gray-400 hover:text-warmOrange transition"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/sevaamritfoodtrust?stkn=YWtnZHpzeW1oZzFx" target="_blank" class="text-gray-400 hover:text-warmOrange transition"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-gray-800/50 text-center text-xs text-gray-500">
-            &copy; 2026 Seva Amrit Food Trust. All rights reserved.
-        </div>
-    </footer>
-
 </body>
 </html>
